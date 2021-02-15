@@ -19,7 +19,5 @@ export type RecipeDetailType = {
 export type GetResponseType = {
   code: number;
   nextUrl: string;
-  label: string;
-  username: boolean;
-  lists: RecipeType[];
+  lists: RecipeType[] | RecipeDetailType;
 };
