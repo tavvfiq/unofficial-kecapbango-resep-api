@@ -20,9 +20,9 @@ class RootRouter {
       res.send({
         greet: 'Hello there 👋',
         message:
-          'visit link on bellow for documentation about masak apa hari ini 👇',
+          'visit link on bellow for documentation about bango.co.id/resep api 👇',
         documentation:
-          'https://github.com/tomorisakura/unofficial-masakapahariini-api',
+          'https://github.com/tavvfiq/unofficial-kecapbango-resep-api',
       });
     });
 
@@ -32,9 +32,7 @@ class RootRouter {
         message: 'Hello there 🌹',
         status: 'On Progress 🚀',
         lets_connected: {
-          github: 'https://github.com/tomorisakura',
-          dribbble: 'https://dribbble.com/grevimsx',
-          deviantart: 'https://deviantart.com/hakureix',
+          github: 'https://github.com/tavvfiq',
         },
       });
     });
