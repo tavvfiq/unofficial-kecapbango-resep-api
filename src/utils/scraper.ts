@@ -1,13 +1,8 @@
 import cheerioModule from 'cheerio';
-import { Request, Response } from 'express';
-import { RecipeDetailType } from '../interfaces';
+import { GetResponseType, RecipeDetailType } from '../interfaces';
 import { arrToObj } from './obj';
 
-export const ScrapeRecipeDetail = (
-  _req: Request,
-  res: Response,
-  html: string
-): void => {
+export const ScrapeRecipeDetail = (html: string): GetResponseType => {
   try {
     const $ = cheerioModule.load(html);
     const data: RecipeDetailType = {};
@@ -65,9 +60,9 @@ export const ScrapeRecipeDetail = (
       .each((_, e) => {
         data['pic'] = e.attribs.src;
       });
-    res.send({ ...data });
+    return { code: 200, nextUrl: '', lists: { ...data } };
   } catch (err) {
     console.log(err);
-    throw err;
+    return err;
   }
 };
