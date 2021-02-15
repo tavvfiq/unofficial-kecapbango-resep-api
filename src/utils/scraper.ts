@@ -1,15 +1,16 @@
 import cheerioModule from 'cheerio';
 import { Request, Response } from 'express';
+import { RecipeDetailType } from '../interfaces';
 import { arrToObj } from './obj';
 
 export const ScrapeRecipeDetail = (
-  req: Request,
+  _req: Request,
   res: Response,
   html: string
-) => {
+): void => {
   try {
     const $ = cheerioModule.load(html);
-    const data: { [key: string]: string | string[] } = {};
+    const data: RecipeDetailType = {};
     const areaDetail = $('.text-area-detail').find(
       'div.text-container.col.left'
     );

@@ -12,6 +12,10 @@ export type RecipeType = {
   attr: Attribute;
 };
 
+export type RecipeDetailType = {
+  [key: string]: string | string[];
+};
+
 export type GetResponseType = {
   code: number;
   nextUrl: string;
