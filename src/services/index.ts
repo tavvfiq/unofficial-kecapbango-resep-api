@@ -16,9 +16,10 @@ class bangoAPI {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected _handleResponse = ({ data }: AxiosResponse<any>) => data;
 
-  protected _handleError = (error: any) => error;
+  protected _handleError = (error: unknown) => error;
 
   public getRecipes = (page: string): Promise<GetResponseType> =>
     this._instance.get(`${bangoURL}/newest/1/${page}`);
