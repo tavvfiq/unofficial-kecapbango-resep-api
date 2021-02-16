@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
+    "start-vercel": "vercel dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "deploy": "vercel deploy --prod"
@@ -32,5 +33,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
