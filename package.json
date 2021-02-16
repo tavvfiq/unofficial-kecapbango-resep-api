@@ -2,7 +2,7 @@
   "name": "unofficial-bango-resep-api",
   "version": "1.0.0",
   "description": "Unofficial API dari bango.co.id/resep",
-  "main": "./api/index.ts",
+  "main": "./index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
