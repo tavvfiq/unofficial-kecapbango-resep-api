@@ -5,16 +5,20 @@ type Attribute = {
 };
 
 export type RecipeType = {
-  id: string;
+  id?: string;
   title: string;
   pic: string;
   url: string;
   attr: Attribute;
 };
 
-export type RecipeDetailType = {
-  [key: string]: string | string[];
-};
+export type RecipeDetailType =
+  | Record<string, unknown>
+  | (RecipeType & {
+      ingredients: string[];
+      steps: string[];
+      [key: string]: string | string[];
+    });
 
 export type GetResponseType = {
   code: number;

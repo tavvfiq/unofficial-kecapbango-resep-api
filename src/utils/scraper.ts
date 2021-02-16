@@ -33,7 +33,9 @@ export const ScrapeRecipeDetail = (html: string): GetResponseType => {
     const recipeBody = $('div.row.center.content-recipe-container');
     recipeBody.find('div.col.left.content-box').each((_, e) => {
       const parent = $(e).find('div.row.content');
-      const title = $(parent).find('.row.title').text();
+      let title = $(parent).find('.row.title').text();
+      if (title === 'Bahan') title = 'ingredients';
+      else if (title === 'Cara Memasak') title = 'steps';
       data[title === '' ? 'desc' : title] =
         title === '' ? (data['desc'] ? data['desc'] : '') : [];
       const desc = $(parent).find('.row.desc');
