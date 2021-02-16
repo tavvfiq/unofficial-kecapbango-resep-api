@@ -1,5 +1,5 @@
 import express from 'express';
-import RootRouter from './route';
+import RootRouter from './src/route';
 import cors from 'cors';
 
 /**
