@@ -5,7 +5,7 @@
   "main": "./api/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts",
+    "start": "nodemon ./api/index.ts",
     "start-vercel": "vercel dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

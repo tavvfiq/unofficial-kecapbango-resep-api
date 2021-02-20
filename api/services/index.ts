@@ -26,6 +26,12 @@ class bangoAPI {
 
   public getDetailPage = (pageURL: string): Promise<string> =>
     this._instance.get(pageURL);
+
+  public getRecipeByTag = (
+    tag: string,
+    page: string
+  ): Promise<GetResponseType> =>
+    this._instance.get(`${bangoURL}/tag/${tag}/${page}`);
 }
 
 export default new bangoAPI();

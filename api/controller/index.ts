@@ -22,6 +22,16 @@ const Controller = {
       res.status(500).json({ code: 500, error });
     }
   },
+  getRecipeByTage: async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { tag } = req.params;
+      const { page } = req.query;
+      const data = await services.getRecipeByTag(tag, page as string);
+      res.status(data.code).send({ ...data });
+    } catch (error) {
+      res.status(500).json({ code: 500, error });
+    }
+  },
 };
 
 export default Controller;

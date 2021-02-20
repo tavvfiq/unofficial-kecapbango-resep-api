@@ -25,5 +25,6 @@ router.get('/api', (req, res) => {
 
 router.get('/api/recipes/:page', Controller.getRecipes);
 router.get('/api/recipe/', Controller.getDetailRecipe);
+router.get('/api/recipe-by-tag/:tag', Controller.getRecipeByTage);
 
 export default router;
